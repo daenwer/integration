@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import ConnectionView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/', ConnectionView.as_view(), name='logs_sessions'),
 ]
