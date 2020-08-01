@@ -1,0 +1,3 @@
+туннель:
+ngrok http 8000
+вписать в command slack <address>/slack/
