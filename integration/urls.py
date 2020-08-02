@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-from app.views import ConnectionView, SlackView
+from app.views import SlackView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # TODO: только для теста, удалить в конце
-    path('test/', ConnectionView.as_view(), name='logs_sessions'),
     path('slack/', csrf_exempt(SlackView.as_view()), name='slack_command'),
 ]
